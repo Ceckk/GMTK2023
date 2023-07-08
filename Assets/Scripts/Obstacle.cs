@@ -20,25 +20,25 @@ public class Obstacle : MonoBehaviour
 
     private void Update()
     {
-        _time -= Time.deltaTime;
-        if (_time <= 0)
-        {
-            _offsetY = (_originalY - transform.position.y) * pullPower;
-        }
+        // _time -= Time.deltaTime;
+        // if (_time <= 0)
+        // {
+        //     _offsetY = (_originalY - transform.position.y) * pullPower;
+        // }
 
-        // if (Input.GetMouseButtonDown(0))
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            _time = cooldown;
-            _offsetY = pushPower;
-        }
+        // // if (Input.GetMouseButtonDown(0))
+        // if (Input.GetKeyDown(KeyCode.W))
+        // {
+        //     _time = cooldown;
+        //     _offsetY = pushPower;
+        // }
 
-        // if (Input.GetMouseButtonDown(1))
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            _time = cooldown;
-            _offsetY = -pushPower;
-        }
+        // // if (Input.GetMouseButtonDown(1))
+        // if (Input.GetKeyDown(KeyCode.S))
+        // {
+        //     _time = cooldown;
+        //     _offsetY = -pushPower;
+        // }
 
         var pos = transform.position;
         pos.x += (speed.x - GameManager.Instance.GameSpeed) * Time.deltaTime;
