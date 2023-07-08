@@ -3,7 +3,9 @@ using UnityEngine;
 public class ScreenRotate : MonoBehaviour
 {
     public float power = 50;
+    public float powerUsage = 5;
     private Vector3 _mousePos;
+    public bool usingPower;
 
     void Update()
     {
@@ -11,11 +13,23 @@ public class ScreenRotate : MonoBehaviour
         {
             _mousePos = Input.mousePosition;
         }
+
         if (Input.GetMouseButton(0))
         {
-            var delta = Input.mousePosition - _mousePos;
+            if (GameManager.Instance.powerAmount > 0)
+            {
+                var delta = Input.mousePosition - _mousePos;
+                transform.RotateAround(Player.Instance.transform.position, Vector3.forward, delta.y * power * Time.deltaTime);
+
+                GameManager.Instance.powerAmount -= powerUsage * Time.deltaTime;
+            }
+
             _mousePos = Input.mousePosition;
-            transform.Rotate(0, 0, delta.y * power * Time.deltaTime);
+            usingPower = true;
+        }
+        else
+        {
+            usingPower = false;
         }
     }
 }
