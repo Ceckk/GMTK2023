@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: 0}
+  m_LocalPosition: {x: -4.5, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -251,7 +251,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.45833334
+  m_Radius: 0.75
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -552,7 +552,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &280507775
 MonoBehaviour:
@@ -1046,7 +1046,7 @@ RectTransform:
   - {fileID: 2144448297}
   - {fileID: 1805228798}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1214,7 +1214,7 @@ PrefabInstance:
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: objects.Array.data[0].prefab
       value: 
-      objectReference: {fileID: 9020847862631447337, guid: 5dccca64ef3c58f4985065fd38779786, type: 3}
+      objectReference: {fileID: 6281783482104840144, guid: d73fe22a3832a4fd9a0d05fcd6eccf5a, type: 3}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: objects.Array.data[1].prefab
       value: 
@@ -1684,7 +1684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06312b1955e91f3479138c86bbc3f9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  godMode: 0
+  godMode: 1
   initialGameSpeed: 5
   gameSpeedIncrease: 0.1
   powerAmount: 1
@@ -1777,7 +1777,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1805228797
 GameObject:
@@ -2002,33 +2002,13 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 280507774}
-    - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
-      propertyPath: objects.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
-      propertyPath: objects.Array.data[6].prefab
-      value: 
-      objectReference: {fileID: 4228091919508678670, guid: f5d459de5bf2b4b95862d12e2f447dfa, type: 3}
-    - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
-      propertyPath: objects.Array.data[7].prefab
-      value: 
-      objectReference: {fileID: 4228091919508678670, guid: f5d459de5bf2b4b95862d12e2f447dfa, type: 3}
-    - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
-      propertyPath: objects.Array.data[6].spawnChance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
-      propertyPath: objects.Array.data[7].spawnChance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 890182968355611632, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_LocalPosition.x
