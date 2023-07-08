@@ -19,6 +19,7 @@ public class GameManager : MonoSingleton<GameManager>
     public Button retryButton;
     public ScreenRotate screenRotate;
     public ScreenMove screenMove;
+    public GameObject limits;
 
     private Spawner[] spawners;
 
@@ -32,6 +33,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void NewGame()
     {
+        limits.transform.rotation = Quaternion.identity;
+        limits.transform.position = Vector3.zero;
         score = 0f;
         GameSpeed = initialGameSpeed;
         enabled = true;

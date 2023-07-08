@@ -49,14 +49,8 @@ MonoBehaviour:
     spawnChance: 0.2
   - prefab: {fileID: 2476827376760099075, guid: e29770925dd4c4ae38bb739f2241882e, type: 3}
     spawnChance: 0.18
-  - prefab: {fileID: 1204487199014926551, guid: 7d29323e462ec4502b0cbd1e9e3de3a3, type: 3}
-    spawnChance: 0.16
   - prefab: {fileID: 7711440773125596872, guid: df5cec54de6e64de3bfadf6d0444cb06, type: 3}
     spawnChance: 0.14
-  - prefab: {fileID: 6575941004881697024, guid: fd0fd714bcd0c40569168c2a92d4144d, type: 3}
-    spawnChance: 0.12
-  - prefab: {fileID: 4967943789307036395, guid: 2b7ea5f8e1edf4d46b790efb1274349e, type: 3}
-    spawnChance: 0.1
   - prefab: {fileID: 4228091919508678670, guid: f5d459de5bf2b4b95862d12e2f447dfa, type: 3}
     spawnChance: 0.08
   parent: {fileID: 0}

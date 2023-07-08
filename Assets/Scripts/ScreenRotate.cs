@@ -6,6 +6,7 @@ public class ScreenRotate : MonoBehaviour
     public float powerUsage = 5;
     private Vector3 _mousePos;
     public bool usingPower;
+    public Transform _rotationTarget;
 
     void Update()
     {
@@ -19,7 +20,7 @@ public class ScreenRotate : MonoBehaviour
             if (GameManager.Instance.powerAmount > 0)
             {
                 var delta = Input.mousePosition - _mousePos;
-                transform.RotateAround(Player.Instance.transform.position, Vector3.forward, delta.y * power * Time.deltaTime);
+                transform.RotateAround(_rotationTarget.position, Vector3.forward, delta.y * power * Time.deltaTime);
 
                 GameManager.Instance.powerAmount -= powerUsage * Time.deltaTime;
             }
