@@ -1,28 +1,5 @@
 {
   "dependencies": {
-    "com.coffee.ui-particle": {
-      "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "a499f0c04670e6e52893799f02a30aa7b5b4db05"
-    },
-    "com.esotericsoftware.spine.spine-csharp": {
-      "version": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-csharp/src#4.1",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "f85fb25a35d69a659e3d8d01a99b1fc93f759778"
-    },
-    "com.esotericsoftware.spine.spine-unity": {
-      "version": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-unity/Assets/Spine#4.1",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.esotericsoftware.spine.spine-csharp": "4.1.0"
-      },
-      "hash": "f85fb25a35d69a659e3d8d01a99b1fc93f759778"
-    },
     "com.unity.2d.animation": {
       "version": "7.0.11",
       "depth": 1,
@@ -117,13 +94,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.ads.ios-support": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.burst": {
       "version": "1.8.4",
       "depth": 0,
@@ -193,27 +163,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.nuget.newtonsoft-json": {
-      "version": "3.2.1",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.purchasing": {
-      "version": "4.8.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.modules.unityanalytics": "1.0.0",
-        "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.androidjni": "1.0.0",
-        "com.unity.services.core": "1.8.1"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.render-pipelines.core": {
       "version": "12.1.12",
       "depth": 1,
@@ -240,17 +189,6 @@
       "depth": 2,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.services.core": {
-      "version": "1.9.0",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.nuget.newtonsoft-json": "3.2.1",
-        "com.unity.modules.androidjni": "1.0.0"
-      },
       "url": "https://packages.unity.com"
     },
     "com.unity.shadergraph": {
