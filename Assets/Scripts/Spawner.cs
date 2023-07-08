@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour
     }
 
     public SpawnableObject[] objects;
+    public Transform parent;
 
     public float minSpawnRate = 1f;
     public float maxSpawnRate = 2f;
@@ -33,7 +34,7 @@ public class Spawner : MonoBehaviour
         {
             if (spawnChance < obj.spawnChance)
             {
-                GameObject obstacle = Instantiate(obj.prefab);
+                GameObject obstacle = Instantiate(obj.prefab, parent, true);
                 obstacle.transform.position += transform.position;
                 break;
             }

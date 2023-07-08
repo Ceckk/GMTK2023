@@ -27,7 +27,8 @@ public class Player : MonoBehaviour
         {
             direction = Vector3.down;
 
-            if (Input.GetButton("Jump")) {
+            if (Input.GetButton("Jump"))
+            {
                 direction = Vector3.up * jumpForce;
             }
         }
@@ -37,8 +38,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Obstacle")) {
-            FindObjectOfType<GameManager>().GameOver();
+        if (other.CompareTag("Obstacle"))
+        {
+            // FindObjectOfType<GameManager>().GameOver();
         }
     }
 

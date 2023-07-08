@@ -3,13 +3,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [DefaultExecutionOrder(-1)]
-public class GameManager : MonoBehaviour
+public class GameManager : MonoSingleton<GameManager>
 {
-    public static GameManager Instance { get; private set; }
-
     public float initialGameSpeed = 5f;
     public float gameSpeedIncrease = 0.1f;
-    public float gameSpeed { get; private set; }
+    public float GameSpeed { get; private set; }
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI hiscoreText;
@@ -20,22 +18,6 @@ public class GameManager : MonoBehaviour
     private Spawner spawner;
 
     private float score;
-
-    private void Awake()
-    {
-        if (Instance != null) {
-            DestroyImmediate(gameObject);
-        } else {
-            Instance = this;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (Instance == this) {
-            Instance = null;
-        }
-    }
 
     private void Start()
     {
@@ -54,7 +36,7 @@ public class GameManager : MonoBehaviour
         }
 
         score = 0f;
-        gameSpeed = initialGameSpeed;
+        GameSpeed = initialGameSpeed;
         enabled = true;
 
         player.gameObject.SetActive(true);
@@ -67,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        gameSpeed = 0f;
+        GameSpeed = 0f;
         enabled = false;
 
         player.gameObject.SetActive(false);
@@ -80,8 +62,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        gameSpeed += gameSpeedIncrease * Time.deltaTime;
-        score += gameSpeed * Time.deltaTime;
+        GameSpeed += gameSpeedIncrease * Time.deltaTime;
+        score += GameSpeed * Time.deltaTime;
         scoreText.text = Mathf.FloorToInt(score).ToString("D5");
     }
 
