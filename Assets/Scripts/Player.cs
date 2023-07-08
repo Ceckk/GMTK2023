@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            // FindObjectOfType<GameManager>().GameOver();
+            FindObjectOfType<GameManager>().GameOver();
         }
     }
 

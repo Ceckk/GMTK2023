@@ -15,10 +15,6 @@ public class ScreenMove : MonoBehaviour
         {
             var delta = _mousePos - Input.mousePosition;
             _mousePos = Input.mousePosition;
-            Debug.Log(delta);
-
-            // var rotation = transform.rotation;
-            // rotation.eulerAngles.z += 3;
             transform.Rotate(0, 0, delta.y * power * Time.deltaTime);
         }
     }
