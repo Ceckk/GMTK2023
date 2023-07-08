@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class ScreenMove : MonoBehaviour
 {
-    public float pushPower = 10;
-    public float pullPower = 10;
-    public float cooldown = 0.2f;
+    public float pushPower = 50;
+    public float pullPower = 25;
+    public float cooldown = 0.1f;
     private Vector3 _mousePos;
     private Quaternion _target;
     private float _power;

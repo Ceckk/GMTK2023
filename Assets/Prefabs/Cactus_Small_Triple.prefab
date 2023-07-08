@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2008811433931751998}
   - component: {fileID: -5579335367907545331}
   - component: {fileID: -8365631238972323719}
+  - component: {fileID: -1070584957247795705}
   m_Layer: 0
   m_Name: Cactus_Small_Triple
   m_TagString: Obstacle
@@ -111,3 +112,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4aa01bef04456d489a93b8adc7fec01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: {x: 0, y: 0}
+--- !u!114 &-1070584957247795705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008811433931751997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40d818e24c4349d8b494d091bb64564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushPower: 50
+  pullPower: 25
+  cooldown: 0.1

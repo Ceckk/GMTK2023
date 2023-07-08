@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class Player : MonoBehaviour
+public class Player : MonoSingleton<Player>
 {
     private CharacterController character;
     private Vector3 direction;
@@ -9,17 +9,17 @@ public class Player : MonoBehaviour
     public float jumpForce = 8f;
     public float gravity = 9.81f * 2f;
 
-    private void Awake()
+    void Start()
     {
         character = GetComponent<CharacterController>();
     }
 
-    private void OnEnable()
+    void OnEnable()
     {
         direction = Vector3.zero;
     }
 
-    private void Update()
+    void Update()
     {
         direction += Vector3.down * gravity * Time.deltaTime;
 

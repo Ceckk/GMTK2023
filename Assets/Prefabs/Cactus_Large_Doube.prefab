@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3554295633068608033}
   - component: {fileID: 5628237025393663252}
   - component: {fileID: -6884696123139720798}
+  - component: {fileID: 7003532354863828161}
   m_Layer: 0
   m_Name: Cactus_Large_Doube
   m_TagString: Obstacle
@@ -111,3 +112,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4aa01bef04456d489a93b8adc7fec01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: {x: 0, y: 0}
+--- !u!114 &7003532354863828161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3554295633068608032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40d818e24c4349d8b494d091bb64564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushPower: 50
+  pullPower: 25
+  cooldown: 0.1
