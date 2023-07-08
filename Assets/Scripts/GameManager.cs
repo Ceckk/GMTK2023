@@ -5,6 +5,7 @@ using UnityEngine.UI;
 [DefaultExecutionOrder(-1)]
 public class GameManager : MonoSingleton<GameManager>
 {
+    public bool godMode = false;
     public float initialGameSpeed = 5f;
     public float gameSpeedIncrease = 0.1f;
     public float GameSpeed { get; private set; }
@@ -49,15 +50,18 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void GameOver()
     {
-        GameSpeed = 0f;
-        enabled = false;
+        if (!godMode)
+        {
+            GameSpeed = 0f;
+            enabled = false;
 
-        player.gameObject.SetActive(false);
-        spawner.gameObject.SetActive(false);
-        gameOverText.gameObject.SetActive(true);
-        retryButton.gameObject.SetActive(true);
+            player.gameObject.SetActive(false);
+            spawner.gameObject.SetActive(false);
+            gameOverText.gameObject.SetActive(true);
+            retryButton.gameObject.SetActive(true);
 
-        UpdateHiscore();
+            UpdateHiscore();
+        }
     }
 
     private void Update()
