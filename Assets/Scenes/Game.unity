@@ -251,7 +251,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.75
+  m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -405,7 +405,7 @@ PrefabInstance:
       objectReference: {fileID: 280507774}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: maxSpawnRate
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: minSpawnRate
@@ -673,8 +673,8 @@ MonoBehaviour:
   powerUsage: 0
   usingPower: 0
   circle: {fileID: 1177341571}
-  circleMoveSensitivity: 0.25
-  worldMoveSensitivity: 5
+  circleMoveSensitivity: 0.15
+  worldMoveSensitivity: 5.5
 --- !u!114 &280507777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,7 +839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultShakeDuration: 1
-  _defaultShakeAmount: 0.7
+  _defaultShakeAmount: 0.3
 --- !u!1 &550957952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,10 +1992,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06312b1955e91f3479138c86bbc3f9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  godMode: 1
+  godMode: 0
   initialGameSpeed: 5
-  speed: 4.8
-  gameSpeedIncrease: 0.11
+  speed: 5
+  gameSpeedIncrease: 0.08
   speedOffset: 0
   powerAmount: 1
   powerRefillRate: 0.4
@@ -2598,19 +2598,19 @@ PrefabInstance:
       objectReference: {fileID: 280507774}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: maxSpawnRate
-      value: 0.65
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: minSpawnRate
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: objects.Array.data[1].spawnChance
-      value: 0.08
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: objects.Array.data[2].spawnChance
-      value: 0.18
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611632, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_Name
