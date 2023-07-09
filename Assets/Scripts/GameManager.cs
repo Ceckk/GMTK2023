@@ -26,6 +26,10 @@ public class GameManager : MonoSingleton<GameManager>
     public GameObject limits;
     public GameObject deadPlayer;
 
+    public AudioClip _onHoverButton;
+    public AudioClip _onClickButton;
+    public AudioSource _retryButtonAudioSource;
+
     private Spawner[] spawners;
 
     private float score;
@@ -117,6 +121,18 @@ public class GameManager : MonoSingleton<GameManager>
 
             UpdateHiscore();
         }
+    }
+
+    public void OnRetryButtonHover()
+    {
+        _retryButtonAudioSource.clip = _onHoverButton;
+        _retryButtonAudioSource.Play();
+    }
+
+    public void OnRetryButtonClick()
+    {
+        _retryButtonAudioSource.clip = _onClickButton;
+        _retryButtonAudioSource.Play();
     }
 
     private void Update()
