@@ -4,43 +4,35 @@ public class ScreenMove : MonoBehaviour
 {
     public float power = 3;
     public float powerUsage = 5;
-    private Vector3 _mousePos;
-    private bool _active;
     public bool usingPower;
-
-    void Start()
-    {
-        _mousePos = Input.mousePosition;
-    }
-
+    public GameObject circle;
+    private Vector3 _offset;
+    
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            _mousePos = Input.mousePosition;
-            _active = true;
+            _offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
         if (Input.GetMouseButton(0))
         {
-            var cost = powerUsage * Time.deltaTime;
-            if (_active && GameManager.Instance.powerAmount >= cost)
-            {
-                var delta = Input.mousePosition - _mousePos;
-                var pos = transform.position;
-                pos += delta * power * Time.deltaTime;
-                transform.position = pos;
+            var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + _offset;
 
-                GameManager.Instance.powerAmount -= cost;
-                _active = true;
-            }
+            var bounds = OrthographicBounds(Camera.main);
+            pos.x = Mathf.Clamp(pos.x, bounds.min.x, bounds.max.x);
+            pos.y = Mathf.Clamp(pos.y, bounds.min.y, bounds.max.y);
+            transform.position = new Vector3(pos.x, pos.y);
+        }
+    }
 
-            _mousePos = Input.mousePosition;
-            usingPower = true;
-        }
-        else
-        {
-            usingPower = false;
-        }
+    public Bounds OrthographicBounds(Camera camera)
+    {
+        float screenAspect = (float)Screen.width / (float)Screen.height;
+        float cameraHeight = camera.orthographicSize * 2;
+        Bounds bounds = new Bounds(
+            camera.transform.position,
+            new Vector3(cameraHeight * screenAspect, cameraHeight, 0));
+        return bounds;
     }
 }
