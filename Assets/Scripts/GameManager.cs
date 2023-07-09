@@ -24,6 +24,7 @@ public class GameManager : MonoSingleton<GameManager>
     public ScreenSlow screenSlow;
     public ScreenAutoRotate screenAutoRotate;
     public GameObject limits;
+    public GameObject deadPlayer;
 
     private Spawner[] spawners;
 
@@ -40,6 +41,8 @@ public class GameManager : MonoSingleton<GameManager>
         enabled = true;
 
         Player.Instance.gameObject.SetActive(true);
+        deadPlayer.SetActive(false);
+
         foreach (var spawner in spawners)
         {
             spawner.gameObject.SetActive(false);
@@ -65,7 +68,15 @@ public class GameManager : MonoSingleton<GameManager>
         powerAmount = 1;
         enabled = true;
 
+        var obstacles = FindObjectsOfType<Obstacle>();
+        foreach (var obstacle in obstacles)
+        {
+            Destroy(obstacle.gameObject);
+        }
+
         Player.Instance.gameObject.SetActive(true);
+        deadPlayer.SetActive(false);
+
         foreach (var spawner in spawners)
         {
             spawner.gameObject.SetActive(true);
@@ -86,17 +97,12 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (!godMode)
         {
-            var obstacles = FindObjectsOfType<Obstacle>();
-
-            foreach (var obstacle in obstacles)
-            {
-                Destroy(obstacle.gameObject);
-            }
-
             speed = 0f;
             enabled = false;
 
             Player.Instance.gameObject.SetActive(false);
+            deadPlayer.SetActive(true);
+
             foreach (var spawner in spawners)
             {
                 spawner.gameObject.SetActive(false);

@@ -35,7 +35,7 @@ public class AnimatedSprite : MonoBehaviour
             spriteRenderer.sprite = sprites[frame];
         }
 
-        Invoke(nameof(Animate), 1f / GameManager.Instance.GameSpeed);
+        Invoke(nameof(Animate), 1f / Mathf.Max(GameManager.Instance.GameSpeed, GameManager.Instance.initialGameSpeed));
     }
 
 }
