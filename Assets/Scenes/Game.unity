@@ -537,7 +537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &239091999
 Transform:
   m_ObjectHideFlags: 0
@@ -648,7 +648,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280507773}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67ac086463da046ac9a77d3487cfa46d, type: 3}
   m_Name: 
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280507773}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d76eccea2d60d4fcaaa9565b4a3dc72b, type: 3}
   m_Name: 
@@ -1544,7 +1544,7 @@ PrefabInstance:
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: parent
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 280507774}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: maxSpawnRate
       value: 15
