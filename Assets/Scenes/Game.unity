@@ -1489,6 +1489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612678ffdb89b4efb824dcb826429d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.05
 --- !u!23 &834643939
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2597,7 +2598,7 @@ MonoBehaviour:
   godMode: 0
   initialGameSpeed: 5
   speed: 5
-  gameSpeedIncrease: 0.12
+  gameSpeedIncrease: 0.11
   speedOffset: 0
   powerAmount: 1
   powerRefillRate: 0.4
