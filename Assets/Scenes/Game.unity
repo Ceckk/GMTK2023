@@ -670,7 +670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 3
-  powerUsage: 0
+  powerUsage: 0.8
   usingPower: 0
 --- !u!114 &280507777
 MonoBehaviour:

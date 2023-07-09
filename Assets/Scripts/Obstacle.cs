@@ -14,7 +14,7 @@ public class Obstacle : MonoBehaviour
 
     private void Start()
     {
-        _leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 2f;
+        // _leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 2f;
         _originalY = transform.position.y;
     }
 
@@ -47,7 +47,7 @@ public class Obstacle : MonoBehaviour
         transform.position = pos;
         transform.rotation = Quaternion.identity;
 
-        if (transform.position.x < _leftEdge)
+        if (transform.position.x < Player.Instance.transform.position.x - 10)
         {
             Despawn();
         }
