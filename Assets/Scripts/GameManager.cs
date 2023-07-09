@@ -50,7 +50,7 @@ public class GameManager : MonoSingleton<GameManager>
             spawner.gameObject.SetActive(true);
         }
         screenRotate.enabled = true;
-        screenMove.enabled = true;
+        // screenMove.enabled = true;
         // screenSlow.enabled = true;
         // screenAutoRotate.enabled = true;
 
@@ -80,7 +80,7 @@ public class GameManager : MonoSingleton<GameManager>
                 spawner.gameObject.SetActive(false);
             }
             screenRotate.enabled = false;
-            screenMove.enabled = false;
+            // screenMove.enabled = false;
             // screenSlow.enabled = false;
             // screenAutoRotate.enabled = false;
 

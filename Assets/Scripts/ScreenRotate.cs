@@ -8,17 +8,22 @@ public class ScreenRotate : MonoBehaviour
     public bool usingPower;
     public Transform _rotationTarget;
 
+    void Start()
+    {
+        _mousePos = Input.mousePosition;
+    }
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            _mousePos = Input.mousePosition;
-        }
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     _mousePos = Input.mousePosition;
+        // }
 
-        if (Input.GetMouseButton(0))
+        // if (Input.GetMouseButton(0))
         {
             var cost = powerUsage * Time.deltaTime;
-            if (GameManager.Instance.powerAmount >= cost)
+            // if (GameManager.Instance.powerAmount >= cost)
             {
                 var delta = Input.mousePosition - _mousePos;
                 transform.RotateAround(_rotationTarget.position, Vector3.forward, delta.y * power * Time.deltaTime);
@@ -29,9 +34,9 @@ public class ScreenRotate : MonoBehaviour
             _mousePos = Input.mousePosition;
             usingPower = true;
         }
-        else
-        {
-            usingPower = false;
-        }
+        // else
+        // {
+        //     usingPower = false;
+        // }
     }
 }
