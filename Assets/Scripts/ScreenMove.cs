@@ -21,8 +21,12 @@ public class ScreenMove : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             _offset = circle.transform.localPosition - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            _source.clip = _clickDown;
-            _source.Play();
+
+            if (GameManager.Instance.enabled)
+            {
+                _source.clip = _clickDown;
+                _source.Play();
+            }
         }
 
         if (Input.GetMouseButton(0))
@@ -53,7 +57,7 @@ public class ScreenMove : MonoBehaviour
             _offset = pos - mousePos;
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && GameManager.Instance.enabled)
         {
             _source.clip = _clickUp;
             _source.Play();
