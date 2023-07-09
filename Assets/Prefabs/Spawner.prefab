@@ -51,8 +51,6 @@ MonoBehaviour:
     spawnChance: 0.18
   - prefab: {fileID: 7711440773125596872, guid: df5cec54de6e64de3bfadf6d0444cb06, type: 3}
     spawnChance: 0.14
-  - prefab: {fileID: 4228091919508678670, guid: f5d459de5bf2b4b95862d12e2f447dfa, type: 3}
-    spawnChance: 0.08
   parent: {fileID: 0}
   minSpawnRate: 0.5
   maxSpawnRate: 0.5
