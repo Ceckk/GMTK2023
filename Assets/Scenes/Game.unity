@@ -497,15 +497,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -685,7 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 3
-  powerUsage: 0.2
+  powerUsage: 0.8
   usingPower: 0
 --- !u!114 &280507778
 MonoBehaviour:
@@ -699,8 +699,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575b32cce2329486886ce8daf138f857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUp: 10
-  powerDown: 10
+  powerUp: 45
+  powerDown: 45
   _rotationTarget: {fileID: 148271}
 --- !u!1 &519420028
 GameObject:
@@ -1905,11 +1905,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   godMode: 0
   initialGameSpeed: 5
-  speed: 5
-  gameSpeedIncrease: 0.1
+  speed: 4.8
+  gameSpeedIncrease: 0.11
   speedOffset: 0
   powerAmount: 1
-  powerRefillRate: 0.2
+  powerRefillRate: 0.4
   scoreText: {fileID: 550957954}
   hiscoreText: {fileID: 151625051}
   gameOverText: {fileID: 1081033933}
@@ -2421,6 +2421,22 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 280507774}
+    - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
+      propertyPath: maxSpawnRate
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
+      propertyPath: minSpawnRate
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
+      propertyPath: objects.Array.data[1].spawnChance
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
+      propertyPath: objects.Array.data[2].spawnChance
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 890182968355611632, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_Name
       value: Spawner
