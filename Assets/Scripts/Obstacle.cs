@@ -49,9 +49,13 @@ public class Obstacle : MonoBehaviour
 
         if (transform.position.x < _leftEdge)
         {
-            Destroy(gameObject);
+            Despawn();
         }
 
     }
 
+    protected virtual void Despawn()
+    {
+        Destroy(gameObject);
+    }
 }
