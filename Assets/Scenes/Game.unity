@@ -1903,7 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06312b1955e91f3479138c86bbc3f9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  godMode: 1
+  godMode: 0
   initialGameSpeed: 5
   speed: 5
   gameSpeedIncrease: 0.1
