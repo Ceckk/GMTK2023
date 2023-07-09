@@ -6,8 +6,8 @@ public class ScreenAutoRotate : MonoBehaviour
     public float powerDown = 1;
     public Transform _rotationTarget;
     private float _totalRotation;
-    private float rotMax = 30;
-    private float rotMin = -30;
+    public float rotMax = 45;
+    public float rotMin = -45;
 
     void Update()
     {

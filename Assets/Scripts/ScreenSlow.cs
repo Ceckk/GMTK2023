@@ -4,32 +4,30 @@ public class ScreenSlow : MonoBehaviour
 {
     public float power = 3;
     public float powerUsage = 5;
-    private Vector3 _mousePos;
-    private bool _mouseDown;
+    private bool _active;
     public bool usingPower;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            _mousePos = Input.mousePosition;
-            _mouseDown = true;
+            _active = true;
         }
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetKey(KeyCode.Space))
         {
             var cost = powerUsage * Time.deltaTime;
-            if (_mouseDown && GameManager.Instance.powerAmount >= cost)
+            if (_active && GameManager.Instance.powerAmount >= cost)
             {
                 GameManager.Instance.speedOffset = -3;
                 GameManager.Instance.powerAmount -= cost;
             }
             else
             {
-                _mouseDown = false;
+                GameManager.Instance.speedOffset = 0;
+                _active = false;
             }
 
-            _mousePos = Input.mousePosition;
             usingPower = true;
         }
         else

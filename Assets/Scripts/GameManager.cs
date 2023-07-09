@@ -22,6 +22,7 @@ public class GameManager : MonoSingleton<GameManager>
     public ScreenRotate screenRotate;
     public ScreenMove screenMove;
     public ScreenSlow screenSlow;
+    public ScreenAutoRotate screenAutoRotate;
     public GameObject limits;
 
     private Spawner[] spawners;
@@ -48,6 +49,10 @@ public class GameManager : MonoSingleton<GameManager>
         {
             spawner.gameObject.SetActive(true);
         }
+        // screenRotate.enabled = true;
+        // screenMove.enabled = true;
+        screenSlow.enabled = true;
+        screenAutoRotate.enabled = true;
 
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
@@ -74,6 +79,11 @@ public class GameManager : MonoSingleton<GameManager>
             {
                 spawner.gameObject.SetActive(false);
             }
+            // screenRotate.enabled = false;
+            // screenMove.enabled = false;
+            screenSlow.enabled = false;
+            screenAutoRotate.enabled = false;
+
             gameOverText.gameObject.SetActive(true);
             retryButton.gameObject.SetActive(true);
 

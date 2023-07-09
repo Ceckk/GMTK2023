@@ -702,6 +702,8 @@ MonoBehaviour:
   powerUp: 45
   powerDown: 45
   _rotationTarget: {fileID: 148271}
+  rotMax: 45
+  rotMin: -45
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,6 +1920,7 @@ MonoBehaviour:
   screenRotate: {fileID: 280507775}
   screenMove: {fileID: 280507776}
   screenSlow: {fileID: 280507777}
+  screenAutoRotate: {fileID: 280507778}
   limits: {fileID: 788776527}
 --- !u!4 &1501353567
 Transform:
