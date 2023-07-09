@@ -16,7 +16,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI hiscoreText;
-    public TextMeshProUGUI gameOverText;
+    public GameObject gameOver;
     public Image powerFillImage;
     public Button retryButton;
     public ScreenRotate screenRotate;
@@ -32,7 +32,28 @@ public class GameManager : MonoSingleton<GameManager>
     private void Start()
     {
         spawners = FindObjectsOfType<Spawner>();
-        NewGame();
+        limits.transform.rotation = Quaternion.identity;
+        limits.transform.position = Vector3.zero;
+        score = 0f;
+        speed = initialGameSpeed;
+        powerAmount = 1;
+        enabled = true;
+
+        Player.Instance.gameObject.SetActive(true);
+        foreach (var spawner in spawners)
+        {
+            spawner.gameObject.SetActive(false);
+        }
+        // screenRotate.enabled = true;
+        screenMove.enabled = false;
+        screenMove.ResetPositions();
+        // screenSlow.enabled = true;
+        // screenAutoRotate.enabled = true;
+
+        gameOver.SetActive(false);
+        retryButton.gameObject.SetActive(false);
+
+        UpdateHiscore();
     }
 
     public void NewGame()
@@ -55,7 +76,7 @@ public class GameManager : MonoSingleton<GameManager>
         // screenSlow.enabled = true;
         // screenAutoRotate.enabled = true;
 
-        gameOverText.gameObject.SetActive(false);
+        gameOver.SetActive(false);
         retryButton.gameObject.SetActive(false);
 
         UpdateHiscore();
@@ -85,7 +106,7 @@ public class GameManager : MonoSingleton<GameManager>
             // screenSlow.enabled = false;
             // screenAutoRotate.enabled = false;
 
-            gameOverText.gameObject.SetActive(true);
+            gameOver.SetActive(true);
             retryButton.gameObject.SetActive(true);
 
             UpdateHiscore();
