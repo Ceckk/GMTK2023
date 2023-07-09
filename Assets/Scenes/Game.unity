@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 0, z: 0}
+  m_LocalPosition: {x: -3.91, y: 0.53, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -251,7 +251,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -678,7 +678,7 @@ MonoBehaviour:
   usingPower: 0
   circle: {fileID: 1177341571}
   circleMoveSensitivity: 0.15
-  worldMoveSensitivity: 5.5
+  worldMoveSensitivity: 4.75
 --- !u!114 &280507777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,7 +1601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1814,7 +1814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2095,7 +2095,7 @@ MonoBehaviour:
   godMode: 0
   initialGameSpeed: 5
   speed: 5
-  gameSpeedIncrease: 0.08
+  gameSpeedIncrease: 0.12
   speedOffset: 0
   powerAmount: 1
   powerRefillRate: 0.4
@@ -2826,10 +2826,14 @@ PrefabInstance:
       objectReference: {fileID: 280507774}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: maxSpawnRate
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: minSpawnRate
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
+      propertyPath: objects.Array.data[0].spawnChance
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
@@ -2854,7 +2858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_LocalPosition.z
