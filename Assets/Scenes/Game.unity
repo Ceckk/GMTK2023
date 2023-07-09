@@ -941,7 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultShakeDuration: 1
-  _defaultShakeAmount: 0.3
+  _defaultShakeAmount: 0.17
 --- !u!1 &550957952
 GameObject:
   m_ObjectHideFlags: 0
