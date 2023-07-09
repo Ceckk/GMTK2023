@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class ScreenMove : MonoBehaviour
 {
+    public AudioClip _clickDown;
+    public AudioClip _clickUp;
+    public AudioSource _source;
+
     public float power = 3;
     public float powerUsage = 5;
     public bool usingPower;
@@ -16,6 +20,8 @@ public class ScreenMove : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             _offset = circle.transform.localPosition - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _source.clip = _clickDown;
+            _source.Play();
         }
 
         if (Input.GetMouseButton(0))
@@ -45,6 +51,12 @@ public class ScreenMove : MonoBehaviour
 
             circle.transform.localPosition = pos;
             _offset = pos - mousePos;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            _source.clip = _clickUp;
+            _source.Play();
         }
     }
 
