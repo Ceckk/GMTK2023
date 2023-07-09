@@ -13,6 +13,7 @@ public class ScreenMove : MonoBehaviour
     public GameObject circle;
     public float circleMoveSensitivity = 0.5f;
     public float worldMoveSensitivity = 2;
+    public float radius = 0.75f;
     private Vector3 _offset;
 
     void Update()
@@ -35,7 +36,6 @@ public class ScreenMove : MonoBehaviour
             pos = circle.transform.localPosition + delta;
             circle.transform.localPosition = new Vector3(pos.x, pos.y);
 
-            float radius = 0.5f;
             Vector3 centerPosition = Vector3.zero;
             float distance = Vector3.Distance(pos, centerPosition);
 
