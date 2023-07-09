@@ -1,29 +1,32 @@
 using UnityEngine;
 
-public class ScreenRotate : MonoBehaviour
+public class ScreenSlow : MonoBehaviour
 {
-    public float power = 50;
+    public float power = 3;
     public float powerUsage = 5;
     private Vector3 _mousePos;
+    private bool _mouseDown;
     public bool usingPower;
-    public Transform _rotationTarget;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             _mousePos = Input.mousePosition;
+            _mouseDown = true;
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             var cost = powerUsage * Time.deltaTime;
-            if (GameManager.Instance.powerAmount >= cost)
+            if (_mouseDown && GameManager.Instance.powerAmount >= cost)
             {
-                var delta = Input.mousePosition - _mousePos;
-                transform.RotateAround(_rotationTarget.position, Vector3.forward, delta.y * power * Time.deltaTime);
-
+                GameManager.Instance.speedOffset = -3;
                 GameManager.Instance.powerAmount -= cost;
+            }
+            else
+            {
+                _mouseDown = false;
             }
 
             _mousePos = Input.mousePosition;
@@ -31,6 +34,7 @@ public class ScreenRotate : MonoBehaviour
         }
         else
         {
+            GameManager.Instance.speedOffset = 0;
             usingPower = false;
         }
     }

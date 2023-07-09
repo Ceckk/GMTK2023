@@ -532,6 +532,8 @@ GameObject:
   - component: {fileID: 280507774}
   - component: {fileID: 280507775}
   - component: {fileID: 280507776}
+  - component: {fileID: 280507777}
+  - component: {fileID: 280507778}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -561,13 +563,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280507773}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67ac086463da046ac9a77d3487cfa46d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 50
-  powerUsage: 0.2
+  power: 10
+  powerUsage: 0
   usingPower: 0
   _rotationTarget: {fileID: 148271}
 --- !u!114 &280507776
@@ -577,7 +579,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280507773}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d76eccea2d60d4fcaaa9565b4a3dc72b, type: 3}
   m_Name: 
@@ -585,6 +587,36 @@ MonoBehaviour:
   power: 3
   powerUsage: 0.2
   usingPower: 0
+--- !u!114 &280507777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280507773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8773b0e157e92425badcc80e89d3bf94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 3
+  powerUsage: 0.2
+  usingPower: 0
+--- !u!114 &280507778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280507773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575b32cce2329486886ce8daf138f857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: 10
+  powerDown: 10
+  _rotationTarget: {fileID: 148271}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +1035,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788776527}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67ac086463da046ac9a77d3487cfa46d, type: 3}
   m_Name: 
@@ -1483,6 +1515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meteor Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 890182968355611632, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 890182968355611633, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1769,7 +1805,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   godMode: 0
   initialGameSpeed: 5
+  speed: 5
   gameSpeedIncrease: 0.1
+  speedOffset: 0
   powerAmount: 1
   powerRefillRate: 0.2
   scoreText: {fileID: 550957954}
@@ -1779,6 +1817,7 @@ MonoBehaviour:
   retryButton: {fileID: 1417875464}
   screenRotate: {fileID: 280507775}
   screenMove: {fileID: 280507776}
+  screenSlow: {fileID: 280507777}
   limits: {fileID: 788776527}
 --- !u!4 &1501353567
 Transform:

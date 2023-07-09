@@ -7,10 +7,12 @@ public class GameManager : MonoSingleton<GameManager>
 {
     public bool godMode = false;
     public float initialGameSpeed = 5f;
+    public float speed = 5f;
     public float gameSpeedIncrease = 0.1f;
+    public float speedOffset = 0;
     public float powerAmount = 1;
     public float powerRefillRate = 10;
-    public float GameSpeed { get; private set; }
+    public float GameSpeed { get => speed + speedOffset; }
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI hiscoreText;
@@ -19,6 +21,7 @@ public class GameManager : MonoSingleton<GameManager>
     public Button retryButton;
     public ScreenRotate screenRotate;
     public ScreenMove screenMove;
+    public ScreenSlow screenSlow;
     public GameObject limits;
 
     private Spawner[] spawners;
@@ -36,7 +39,8 @@ public class GameManager : MonoSingleton<GameManager>
         limits.transform.rotation = Quaternion.identity;
         limits.transform.position = Vector3.zero;
         score = 0f;
-        GameSpeed = initialGameSpeed;
+        speed = initialGameSpeed;
+        powerAmount = 1;
         enabled = true;
 
         Player.Instance.gameObject.SetActive(true);
@@ -62,7 +66,7 @@ public class GameManager : MonoSingleton<GameManager>
                 Destroy(obstacle.gameObject);
             }
 
-            GameSpeed = 0f;
+            speed = 0f;
             enabled = false;
 
             Player.Instance.gameObject.SetActive(false);
@@ -79,11 +83,11 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Update()
     {
-        GameSpeed += gameSpeedIncrease * Time.deltaTime;
-        score += GameSpeed * Time.deltaTime;
+        speed += gameSpeedIncrease * Time.deltaTime;
+        score += speed * Time.deltaTime;
         scoreText.text = Mathf.FloorToInt(score).ToString("D5");
 
-        if (!screenRotate.usingPower && !screenMove.usingPower)
+        if (!screenRotate.usingPower && !screenMove.usingPower && !screenSlow.usingPower)
         {
             powerAmount += powerRefillRate * Time.deltaTime;
         }

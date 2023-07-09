@@ -16,14 +16,15 @@ public class ScreenMove : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            if (GameManager.Instance.powerAmount > 0)
+            var cost = powerUsage * Time.deltaTime;
+            if (GameManager.Instance.powerAmount >= cost)
             {
                 var delta = Input.mousePosition - _mousePos;
                 var pos = transform.position;
                 pos += delta * power * Time.deltaTime;
                 transform.position = pos;
 
-                GameManager.Instance.powerAmount -= powerUsage * Time.deltaTime;
+                GameManager.Instance.powerAmount -= cost;
             }
 
             _mousePos = Input.mousePosition;
