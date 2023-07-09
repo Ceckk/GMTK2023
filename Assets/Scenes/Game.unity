@@ -1879,11 +1879,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: maxSpawnRate
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: minSpawnRate
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 890182968355611630, guid: 2cf70f3d7e15e4617a46b3ee6588bb79, type: 3}
       propertyPath: objects.Array.size
@@ -2598,7 +2598,7 @@ MonoBehaviour:
   godMode: 0
   initialGameSpeed: 5
   speed: 5
-  gameSpeedIncrease: 0.11
+  gameSpeedIncrease: 0.1
   speedOffset: 0
   powerAmount: 1
   powerRefillRate: 0.4
