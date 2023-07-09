@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ScreenMove : MonoBehaviour
@@ -6,33 +7,50 @@ public class ScreenMove : MonoBehaviour
     public float powerUsage = 5;
     public bool usingPower;
     public GameObject circle;
+    public float circleMoveSensitivity = 0.5f;
+    public float worldMoveSensitivity = 2;
     private Vector3 _offset;
-    
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            _offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _offset = circle.transform.localPosition - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
         if (Input.GetMouseButton(0))
         {
-            var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + _offset;
+            var lastCirclePos = circle.transform.localPosition;
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var pos = mousePos + _offset;
+            pos.z = 0;
 
-            var bounds = OrthographicBounds(Camera.main);
-            pos.x = Mathf.Clamp(pos.x, bounds.min.x, bounds.max.x);
-            pos.y = Mathf.Clamp(pos.y, bounds.min.y, bounds.max.y);
-            transform.position = new Vector3(pos.x, pos.y);
+            var delta = (pos - circle.transform.localPosition) * circleMoveSensitivity;
+            pos = circle.transform.localPosition + delta;
+            circle.transform.localPosition = new Vector3(pos.x, pos.y);
+
+            float radius = 0.5f;
+            Vector3 centerPosition = Vector3.zero;
+            float distance = Vector3.Distance(pos, centerPosition);
+
+            if (distance > radius)
+            {
+                Vector3 fromOriginToObject = pos - centerPosition;
+                fromOriginToObject *= radius / distance;
+                pos = centerPosition + fromOriginToObject;
+            }
+
+            var delta2 = (pos - lastCirclePos) * worldMoveSensitivity;
+            transform.position += delta2;
+
+            circle.transform.localPosition = pos;
+            _offset = pos - mousePos;
         }
     }
 
-    public Bounds OrthographicBounds(Camera camera)
+    public void ResetPositions()
     {
-        float screenAspect = (float)Screen.width / (float)Screen.height;
-        float cameraHeight = camera.orthographicSize * 2;
-        Bounds bounds = new Bounds(
-            camera.transform.position,
-            new Vector3(cameraHeight * screenAspect, cameraHeight, 0));
-        return bounds;
+        transform.position = Vector3.zero;
+        circle.transform.localPosition = Vector3.zero;
     }
 }

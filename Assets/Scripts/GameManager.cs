@@ -51,7 +51,7 @@ public class GameManager : MonoSingleton<GameManager>
         }
         // screenRotate.enabled = true;
         screenMove.enabled = true;
-        screenMove.gameObject.transform.position = Vector3.zero;
+        screenMove.ResetPositions();
         // screenSlow.enabled = true;
         // screenAutoRotate.enabled = true;
 
