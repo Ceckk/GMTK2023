@@ -45,11 +45,13 @@ public class Obstacle : MonoBehaviour
         pos.y += (_offsetY + speed.y) * Time.deltaTime;
         _originalY += speed.y * Time.deltaTime;
         transform.position = pos;
+        transform.rotation = Quaternion.identity;
 
         if (transform.position.x < _leftEdge)
         {
             Destroy(gameObject);
         }
+
     }
 
 }
